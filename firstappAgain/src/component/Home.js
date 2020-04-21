@@ -8,17 +8,17 @@ class Home extends Component {
   constructor() {
      super()
 
-     this.state = {
+     this.test = {
           news: JSON,
           filtered: JSON
      }
   }
 
   filterNews(keyword) {
-     const output = this.state.news.filter((data) => {
+     const output = this.test.news.filter((data) => {
           return data.title.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
      });
-     this.setState({filtered: output});
+     this.setTest({filtered: output});
   }
 
 
@@ -26,7 +26,7 @@ class Home extends Component {
      return (
           <React.Fragment>
              <Header userText={(userInput) => this.filterNews(userInput)}/>
-             <NewsDetails newslist={this.state.filtered}/>
+             <NewsDetails newslist={this.test.filtered}/>
              <Footer year="2021"/>
           </React.Fragment>
      )
